@@ -1,0 +1,40 @@
+.flip-container {
+    -webkit-perspective: 1000;
+    background: transparent;
+}
+
+/* flip the picture when hover */
+
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
+}
+
+
+.flipper {
+    -webkit-transition: 1.5s;
+    -webkit-transform-style: preserve-3d;
+    position: relative;
+}
+
+/* hide back  during flip */
+
+.front,
+.back {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front placed above back */
+
+.front {
+    z-index: 2;
+}
+
+/* back, initially hidden */
+
+.back {
+    -webkit-transform: rotateY(180deg);
+}
