@@ -1,6 +1,8 @@
 .flip-container {
-    -webkit-perspective: 1000;
-    background: transparent;
+    perspective: 1000;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 /* flip the picture when hover */
