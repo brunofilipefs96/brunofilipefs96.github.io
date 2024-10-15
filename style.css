@@ -134,7 +134,7 @@ i{
     width: 100%;
     line-height: 0;
     transform: rotate(180deg);
-    
+
 }
 
 
@@ -143,7 +143,7 @@ i{
     display: block;
     width: 100%;
     height: 81px;
-    
+
 }
 
 
@@ -195,20 +195,14 @@ i{
     background-color: var(--color-bg-items);
 }
 
-.contact-form {
-    padding: 20px;
-    border-radius: 20px;
-    background-color: var(--color-bg-items);
-}
-
-.contact-form .ta-nr {
-    height: 150px;
-    resize: none;
-}
-
 .icons {
     fill: var(--color-bg-items);
     width: 80px;
+}
+
+.icons:hover {
+    transition: 0.3s;
+    scale: 1.1;
 }
 
 .about-icons {
@@ -234,3 +228,108 @@ i{
     background-color: var(--bg-color-hover-button);
     border-color: var(--bg-border-hover-button);
 }
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 101.1%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#navbar, .profile-img, .intro-title, .intro-subtitle {
+    position: relative;
+    z-index: 2;
+}
+
+#aboutme {
+    margin-top: 50.1vh;
+}
+
+.skills-list {
+    text-align: left;
+    font-size: 18px;
+    list-style-type: none;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skills-list i {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--bg-color-hover-button);
+    font-size: 30px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+.contact-card {
+    background-color: var(--color-bg-items);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 20px;
+}
+
+.contact-link svg {
+    width: 60px;
+    height: 60px;
+    fill: var(--color-fg);
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.contact-link:hover svg {
+    fill: var(--bg-color-hover-button);
+    transform: scale(1.1);
+}
+
+.contact-card h2 {
+    color: var(--color-text-title);
+}
+
+.contact-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    transform: scale(1.1);
+}
+
