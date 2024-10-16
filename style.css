@@ -57,6 +57,17 @@
 
 }
 
+@media (max-width: 768px) {
+    .contact-card {
+        width: 100%;
+    }
+
+    .section-about .col-lg-6 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 
 *{
     margin: 0;
@@ -231,6 +242,11 @@ i{
     background-color: var(--color-bg-items);
 }
 
+.section-about .col-lg-6 {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .icons {
     fill: var(--color-bg-items);
     width: 80px;
@@ -323,6 +339,11 @@ i{
     box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
     margin-top: 40px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .contact-card:hover {
@@ -344,6 +365,12 @@ i{
     height: 60px;
     fill: var(--color-fg);
     transition: transform 0.3s ease, fill 0.3s ease;
+    margin: 0 auto;
+}
+
+.contact-link {
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .contact-link:hover svg {
@@ -355,11 +382,6 @@ i{
     color: var(--color-text-title);
 }
 
-.contact-link {
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
 
 .contact-link:hover {
     transform: scale(1.1);
