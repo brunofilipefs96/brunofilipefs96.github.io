@@ -8,11 +8,9 @@ function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark })
   if (localStorageTheme !== null) {
     return localStorageTheme;
   }
-
   if (systemSettingDark.matches) {
     return "dark";
   }
-
   return "light";
 }
 
@@ -37,32 +35,41 @@ function updateThemeOnHtmlEl({ theme }) {
  */
 function pauseAOS() {
   document.querySelectorAll('[data-aos]').forEach(el => {
-    el.classList.add('aos-animate'); // Forces the elements to keep the animation state
-    el.removeAttribute('data-aos'); // Remove data-aos to prevent re-animation
+    el.classList.add('aos-animate');
+    el.removeAttribute('data-aos');
+  });
+}
+
+/**
+ * Utility function to set SVG color based on the theme
+ */
+function setSvgColor(theme) {
+  const svgs = document.querySelectorAll("svg");
+  svgs.forEach(svg => {
+    svg.style.fill = theme === "dark" ? "#ffffff" : "#000000";
   });
 }
 
 /**
  * On page load:
  */
-
 const button = document.querySelector("[data-theme-toggle]");
-const localStorageTheme = localStorage.getItem("theme");
+const localStorageTheme = localStorage.getItem("bruno_theme");
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
 
 updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
 updateThemeOnHtmlEl({ theme: currentThemeSetting });
+setSvgColor(currentThemeSetting);
 
 button.addEventListener("click", (event) => {
   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
-
-  localStorage.setItem("theme", newTheme);
+  localStorage.setItem("bruno_theme", newTheme);
   updateButton({ buttonEl: button, isDark: newTheme === "dark" });
   updateThemeOnHtmlEl({ theme: newTheme });
-
-  pauseAOS(); // Prevent AOS from resetting animations on theme change
+  setSvgColor(newTheme);
+  pauseAOS();
 
   currentThemeSetting = newTheme;
 });
